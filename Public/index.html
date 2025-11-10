@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Video Metadata Generator — AI</title>
+  <link rel="icon" href="data:," />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>One-Click Video Metadata Tool (Groq AI)</h1>
+      <p class="lead">Video upload करें — तुरंत Thumbnails, 5 Titles, SEO Description और Tags/Hashtags पायें.</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <label class="label">Video File (recommended)</label>
+        <input type="file" id="fileInput" accept="video/*" />
+        <label class="label">Or Video URL (optional, may be CORS-blocked)</label>
+        <input type="text" id="urlInput" placeholder="https://..." />
+        <div class="row">
+          <select id="langSelect">
+            <option value="hi-en">Hindi + English</option>
+            <option value="hi">Hindi</option>
+            <option value="en">English</option>
+          </select>
+          <button id="generateBtn">Generate</button>
+        </div>
+        <div id="fileMeta" class="meta"></div>
+        <div id="thumbs" class="thumbs"></div>
+      </section>
+
+      <aside class="card">
+        <h3>Preview & Output</h3>
+        <div id="preview" class="preview">Preview will appear here</div>
+        <div id="output" class="output"></div>
+        <div class="actions">
+          <button id="copyAll" class="small">Copy All</button>
+          <button id="downloadJSON" class="small">Download JSON</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Backend uses Groq API. Keep your API key secret (server-side).</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
